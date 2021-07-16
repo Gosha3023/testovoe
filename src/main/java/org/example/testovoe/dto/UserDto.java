@@ -1,12 +1,11 @@
-package org.example.testovoe.DTO;
+package org.example.testovoe.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.example.testovoe.models.UserModel;
+import org.example.testovoe.model.UserModel;
 import org.hibernate.validator.constraints.URL;
-
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
