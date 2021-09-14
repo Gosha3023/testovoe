@@ -41,7 +41,7 @@ public class UserController {
     public ResponseEntity<UserDto> getUser(@PathVariable Long id) throws InterruptedException {
         Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
         return new ResponseEntity<>(userService.getUser(id), new HttpHeaders(), HttpStatus.OK);
-        //{}//
+        //{}//asdasdasd
     }
 
     @GetMapping("/statistics")
