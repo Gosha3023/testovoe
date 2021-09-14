@@ -4,6 +4,7 @@ import org.example.testovoe.dto.StatusRequestDto;
 import org.example.testovoe.dto.StatusResponseDto;
 import org.example.testovoe.dto.UserDto;
 import org.example.testovoe.model.UserModel;
+import org.example.testovoe.repositorie.UserRepository;
 import org.example.testovoe.service.UserService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -18,9 +19,10 @@ import java.util.List;
 public class UserController {
 
     private final UserService userService;
-
-    public UserController(UserService userService) {
+    private final UserRepository userRepository;
+    public UserController(UserService userService, UserRepository userRepository) {
         this.userService = userService;
+        this.userRepository = userRepository;
     }
 
     @PostMapping
@@ -47,4 +49,14 @@ public class UserController {
         Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
         return new ResponseEntity<>(userService.getStatistics(status, timestamp), new HttpHeaders(), HttpStatus.OK);
     }
+    @PutMapping("/test")
+    public HttpStatus putUserModel(@RequestBody List<UserDto> userModelList){
+        for (UserDto userDto: userModelList) {
+            userRepository.save(new UserModel(userDto));
+
+        }
+        return HttpStatus.OK;
+    }
+
+
 }

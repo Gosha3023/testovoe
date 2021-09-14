@@ -1,5 +1,6 @@
 package org.example.testovoe.model;
 
+import com.sun.jdi.Bootstrap;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.security.cert.Extension;
 import java.time.LocalDateTime;
 
 @Entity
@@ -32,4 +34,6 @@ public class UserModel {
         this.setStatus(userDTO.getStatus());
         this.setAvatar(userDTO.getAvatar());
     }
+
+
 }

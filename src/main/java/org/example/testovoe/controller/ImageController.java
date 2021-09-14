@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+
 @RestController
 @RequestMapping("api/v1/images")
 public class ImageController {
@@ -17,8 +19,12 @@ public class ImageController {
     }
 
     @PostMapping
-    public ResponseEntity<String> postImage(@RequestBody MultipartFile file) {
+    public ResponseEntity<String> postImage(@RequestParam("file") MultipartFile excel) throws IOException {
+        System.out.println(excel.getOriginalFilename());
+        System.out.println(excel.getName());
+        System.out.println(excel.getContentType());
+        System.out.println(excel);
         Thread.yield();
-        return new ResponseEntity<>(fileService.uploadImage(file), new HttpHeaders(), HttpStatus.OK);
+        return new ResponseEntity<>(fileService.uploadImage(excel), new HttpHeaders(), HttpStatus.OK);
     }
 }

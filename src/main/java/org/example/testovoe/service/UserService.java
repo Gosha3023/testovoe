@@ -1,5 +1,6 @@
 package org.example.testovoe.service;
 
+import lombok.SneakyThrows;
 import org.example.testovoe.dto.StatusResponseDto;
 import org.example.testovoe.dto.UserDto;
 import org.example.testovoe.exception.NotSuchUserException;
@@ -33,9 +34,9 @@ public class UserService {
         userRepository.save(userModel);
         return statusResponse;
     }
-
-    public UserDto getUser(Long id) throws InterruptedException {
-        Thread.sleep(10_000);
+    @SneakyThrows
+    public UserDto getUser(Long id) {
+//        Thread.sleep(10_000);
         Optional<UserModel> userModel = userRepository.findById(id);
         return entityToDto(userModel.orElseThrow(NotSuchUserException::new));
     }

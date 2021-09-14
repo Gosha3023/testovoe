@@ -8,6 +8,7 @@ import org.example.testovoe.model.UserModel;
 import org.hibernate.validator.constraints.URL;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 @Getter
 @Setter
@@ -21,7 +22,7 @@ public class UserDto {
     @Email(message = "имеет неверное значение")
     private String email;
     private Boolean status;
-
+    private List<Integer> integerList;
     public UserDto(UserModel user) {
         this.setName(user.getName());
         this.setEmail(user.getEmail());
