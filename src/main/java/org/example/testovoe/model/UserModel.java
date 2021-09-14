@@ -1,16 +1,17 @@
-package org.example.testovoe.models;
+package org.example.testovoe.model;
 
+import com.sun.jdi.Bootstrap;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.example.testovoe.DTO.UserDto;
-
+import org.example.testovoe.dto.UserDto;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.sql.Timestamp;
+import java.security.cert.Extension;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -24,9 +25,8 @@ public class UserModel {
     private String name;
     private String avatar;
     private String email;
-//    @Enumerated(EnumType.STRING)
     private Boolean status ;
-    private Timestamp timestamp;
+    private LocalDateTime timestamp;
 
     public UserModel(UserDto userDTO) {
         this.setName(userDTO.getName());
@@ -34,4 +34,6 @@ public class UserModel {
         this.setStatus(userDTO.getStatus());
         this.setAvatar(userDTO.getAvatar());
     }
+
+
 }
