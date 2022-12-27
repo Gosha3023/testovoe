@@ -16,5 +16,10 @@
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="bcs-main-releases" />
+      <option name="name" value="bcs-main-releases" />
+      <option name="url" value="https://artifactory.gitlab.bcs.ru/artifactory/bcs-main-releases" />
+    </remote-repository>
   </component>
 </project>
