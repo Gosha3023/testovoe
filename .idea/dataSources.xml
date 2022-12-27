@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:postgresql://localhost:5432/testovoe</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="Login Data" uuid="f73eeaa4-72de-4914-bf23-9162457fbc9d">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$USER_HOME$/AppData/Local/Google/Chrome/User Data/Default/Login Data</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
