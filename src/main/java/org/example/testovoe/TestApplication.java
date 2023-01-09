@@ -162,7 +162,7 @@ public class TestApplication {
 //        StringUtils.isEmpty()
 //        System.out.println(new BigDecimal(""));=
         var scanner = new Scanner(new FileInputStream("C:\\Users\\George\\Desktop\\deals (1) (3).txt"));
-        scanner.nextLine();
+        scanner.nextLine();5
         System.out.println(scanner.nextLine());
     }
 }
